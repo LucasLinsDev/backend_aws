@@ -44,10 +44,16 @@ app.get('/',async(req,res)=>{
   let ordem=parseInt(orderId);
   console.log(ordem)
   const json_save={
-    "id":"sadfasdfsdafsd",
+    
+    "id":"123212",
     "total":total,
     "name":name_client,
-    "history":[{ordem:total},{ordem:total}]
+    "history":
+      [
+        {'order_id':orderId,total:2131},
+        {'order_id':123,total:2132}
+      ]
+
    
   }
 
@@ -84,10 +90,33 @@ app.get('/order',async(req,res)=>{
   const total=data.total;
   const history=data.history;
 
-  console.log(total);
-  console.log(history);
+ // console.log(total);
+ // console.log(history);
+  
+    const novo=history;
+ //   console.log(history)
+//
+   
+  
+  //  const remover=history.findIndex(item => item.order_id === 123);
+  //  console.log(remover);
 
+  //   novo.splice(remover)
+  //   novo.push(   {'order_id':123,total:2132})
+  //   novo.push(   {'order_id':123,total:2132})
+  //   novo.push(   {'order_id':123,total:2132})
+  //   novo.push(   {'order_id':123,total:2132})
+  //   novo.push(   {'order_id':123,total:2132})
+  //   novo.push(   {'Total':total-novo[remover].total})
+      //  data.total=total-novo[remover].total
 
+    //salvar no banco de dados
+
+    // const save_response=await axios.patch('http://travellog.myvtex.com/api/dataentities/dblog/documents',data,{headers:header.module});
+
+    // console.log(save_response.data);
+  
+  
 
   return res.json(data);
 
@@ -105,13 +134,11 @@ app.get('/cancel',async(req,res)=>{
  
 
 
-    history.forEach((item,index) => {
-     
-   });
+
 
    console.log(history);
    // console.log(history);
-  return res.json(data);
+   return res.json(data);
 
 
 })
